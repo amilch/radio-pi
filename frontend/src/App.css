@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Roboto";
+}
+
+.App {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.Header {
+  text-align: center;
+  margin: 24px 20px 16px 20px;
+  font-size: 37px;
+  font-weight: 700;
+  display: flex;
+  justify-content: left;
+}
+
+.Header .GlobalPauseButton {
+  padding-left: 10px;
+  transform: translateY(5px);
+  flex-grow: 1;
+  text-align: left;
+}
+.Header .GlobalPauseButton svg {
+  cursor: pointer;
+  transition: color 150ms ease-in-out;
+}
+.Header .GlobalPauseButton svg:hover {
+  color: #fa233b;
+}
+
+.Header .VolumeControl {
+  transform: translateY(5px);
+  display: flex;
+  padding-left: 20px;
+}
+.Header .VolumeControl svg {
+  cursor: pointer;
+  color: black;
+  transition: color 150ms ease-in-out;
+}
+.Header .VolumeControl svg:hover {
+  color: #fa233b;
+}
+
+.Header .VolumeText {
+  color: #3a3a3a;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 10px 0 10px;
+}
+
+.StationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px 20px;
+  margin: 0 20px 0 20px;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .StationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .StationsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .StationsGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.Station {
+  text-align: center;
+  cursor: pointer;
+}
+
+.Station .ImageWrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.Station .PlayButton,
+.Station .PauseButton {
+  opacity: 0;
+  background-color: rgba(1,1,1,0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border-style: none;
+  cursor: pointer;
+  transition: opacity 150ms ease-in-out;
+}
+
+.Station button.PauseButton {
+  opacity: 100%;
+}
+
+.Station:hover button {
+  opacity: 100%;
+}
+
+.Station button svg {
+  color: #9a9a9e;
+  width: 80px;
+  height: 80px;
+  transition: color 150ms ease-in-out;
+}
+
+.Station button svg:hover{
+  color: #fa233b;
+}
+
+.Station img {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.StationTitle {
+  font-size: 14px;
+}
+
+.StationTitle:hover {
+  text-decoration: underline;
+}
